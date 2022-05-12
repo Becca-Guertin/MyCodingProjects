@@ -38,11 +38,20 @@
   box-shadow: 0 10px 12px rgba(50, 50, 93, 0.11), 0 6px 8px rgba(0, 0, 0, 0.08);
 }
 
+.hoverHand2 {
+  cursor: grab;
+  box-shadow: 0 10px 12px rgba(50, 50, 93, 0.11), 0 6px 8px rgba(0, 0, 0, 0.08);
+}
+
 .roundCorners {
   border-radius: 12px;
 }
 .fullyRound {
   border-radius: 360px;
+}
+
+.round {
+  border-radius: 50%;
 }
 
 .zoom {

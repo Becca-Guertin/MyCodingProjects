@@ -1,45 +1,44 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Grid } from "@mui/material";
+import { Grid, Card, CardContent } from "@mui/material";
 import SimpleImageSlider from "react-simple-image-slider";
-//import Carousel from "@brainhubeu/react-carousel";
-//import { Carousel } from "react-responsive-carousel";
+import Modal1 from "../components/Modals/Modal1";
 import helloText from "../assets/images/HelloWorldIMG.png";
 import greenBG from "../assets/images/GreenBannerIMG.png";
 import bioIMG from "../assets/images/BeccaBioIMG.png";
-import img1 from "../assets/images/SunPopShop logo.png";
+// import img1 from "../assets/images/SunPopShop logo.png";
 import img2 from "../assets/images/ClownBabeTexture-min.png";
 import img3 from "../assets/images/PlantAlienBabeTex_colors.png";
-import img4 from "../assets/images/WipHHpoisonVialAmpBgTex (1).png";
+// import img4 from "../assets/images/WipHHpoisonVialAmpBgTex (1).png";
 import img5 from "../assets/images/EverythingMeansNothing.PNG";
 import img6 from "../assets/images/Modern-Pulp-celebrateNewChallenges.PNG";
-import img7 from "../assets/images/Bending backwards_NoBckg2.jpg";
+// import img7 from "../assets/images/Bending backwards_NoBckg2.jpg";
 import img8 from "../assets/images/DE0A4174-6922-4D78-97C8-D40DB7961115.JPG";
 import img9 from "../assets/images/SurprisedAlienBabe_redTex.png";
-import img10 from "../assets/images/PleatherGalaxyBabe_tex.png";
-import img11 from "../assets/images/PoisonHHampNoBG1.png";
+// import img10 from "../assets/images/PleatherGalaxyBabe_tex.png";
+// import img11 from "../assets/images/PoisonHHampNoBG1.png";
 import img12 from "../assets/images/Modern-Pulp-myHeartRevamp.PNG";
+import img13 from "../assets/images/TransparentBannerCrop_h&h.png";
+import img14 from "../assets/images/Sunpoplogostamp.png";
+import img15 from "../assets/images/HostAFanLogo1.png";
 import purpleBGimg from "../assets/images/SiteBackGroundHorizontal.PNG";
-// import "@brainhubeu/react-carousel/lib/style.css";
+import myProjectText from "../assets/images/RecentProjectsIMJ (1).png";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../assets/css/style.css";
 
 const Landing = () => {
   const carouselImgs = [img2, img12, img5, img6, img8, img9];
-  // const background =
-  //   "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/Modern-Pulp-cloudBG.PNG";
+
+  const [isModalOpen8, setIsModalOpen2] = useState(false);
+
+  const handleClick = () => {
+    setIsModalOpen2(true);
+    // alert("Press Esc to return to About");
+  };
 
   return (
     <React.Fragment>
-      <div
-        className="container"
-        // style={{
-        //   padding: 50,
-        //   backgroundImage: "url(" + greenBG + ")",
-        //   backgroundSize: "100%",
-        //   backgroundRepeat: "no-repeat",
-        // }}
-      >
+      <div className="container">
         <Grid
           container
           direction="column"
@@ -47,8 +46,6 @@ const Landing = () => {
           justify="center"
           alignItems="center"
           style={{
-            // paddingTop: 50,
-            // padding: 50,
             backgroundImage: "url(" + greenBG + ")",
             backgroundSize: "100%",
             backgroundRepeat: "no-repeat",
@@ -58,7 +55,7 @@ const Landing = () => {
           <Grid item>
             <img
               className="logo fullyRound shadow zoom hoverHand"
-              style={{ maxHeight: 600, maxWidth: 500 }}
+              style={{ maxHeight: 400, maxWidth: 300 }}
               src={
                 "https://sunpopbucket.s3.us-west-1.amazonaws.com/images/SelfieBuddiesA.png"
               }
@@ -77,36 +74,16 @@ const Landing = () => {
               <img
                 alt="hello world"
                 className="roundCorners  zoom"
-                // title="click for more info"
                 src={helloText}
                 style={{
                   height: "60%",
                   width: "60%",
-                  // paddingTop: 50,
                 }}
               ></img>
               <Grid item></Grid>
             </Grid>
           </Grid>
           <Grid item></Grid>
-          {/* <Grid item>
-            <Link to="" title="click for more about me!">
-              <img
-                className="roundCorners shadow zoom"
-                alt=""
-                src={
-                  "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/HelloMyNameIsTexture.png"
-                }
-                style={{
-                  height: "auto",
-                  width: "auto",
-                  maxHeight: 300,
-                  maxWidth: 300,
-                }}
-              ></img>
-            </Link>
-          </Grid> */}
-          {/* <Grid item xs={4}></Grid> */}
         </Grid>
         <Grid
           container
@@ -127,7 +104,7 @@ const Landing = () => {
                 <Link to="" title="click for more about me!">
                   <img
                     src={bioIMG}
-                    alt=""
+                    alt="becca is an artist and software engineer based out of the greater seattle area"
                     style={{ height: 500, width: 600 }}
                   ></img>
                 </Link>
@@ -152,12 +129,21 @@ const Landing = () => {
             >
               <Grid item></Grid>
               <Grid item>
-                {/* <img
-                  className=""
-                  alt=""
-                  src="https://sunpopbucket.s3.us-west-1.amazonaws.com/images/MultiColorFlowerStamp1.png"
-                  style={{ maxHeight: 200, maxWidth: 200 }}
-                /> */}
+                <Grid item className="justify-content-center">
+                  <img
+                    alt="resume"
+                    className="round hoverHand2"
+                    src={
+                      "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/checkOutResume.png"
+                    }
+                    style={{ maxHeight: 200, maxWidth: 200 }}
+                    onClick={handleClick}
+                  />
+                  <Modal1
+                    open={isModalOpen8}
+                    setIsModalOpen={setIsModalOpen2}
+                  ></Modal1>
+                </Grid>
               </Grid>
               <Grid item></Grid>
             </Grid>
@@ -171,25 +157,20 @@ const Landing = () => {
               spacing={4}
               style={{
                 paddingTop: 100,
-                paddingBottom: 100,
-                // paddingRight: 350,
-                // paddingLeft: 460,
+                paddingBottom: 75,
                 backgroundImage: "url(" + purpleBGimg + ")",
                 backgroundSize: "100%",
-                // backgroundRepeat: "repeat",
               }}
             >
               <Grid item>
                 <img
                   className=""
-                  alt=""
+                  alt="multi-colored flower icon"
                   src="https://sunpopbucket.s3.us-west-1.amazonaws.com/images/MultiColorFlowerStamp1.png"
                   style={{
                     maxHeight: 300,
                     maxWidth: 300,
-                    padding: 50
-                    // paddingLeft: 15,
-                    // paddingRight: 50,
+                    padding: 50,
                   }}
                 />
               </Grid>
@@ -203,44 +184,91 @@ const Landing = () => {
                     showNavs={true}
                   />
                 </div>
-                {/* <Link to="" title="click for more about me!">
-              <img
-                className="roundCorners shadow zoom"
-                alt=""
-                src={
-                  "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/HelloMyNameIsTexture.png"
-                }
-                style={{
-                  height: "auto",
-                  width: "auto",
-                  maxHeight: 300,
-                  maxWidth: 300,
-                }}
-              ></img>
-            </Link> */}
               </Grid>
               <Grid item>
-                {/* <div
-                //className="text"
-                > */}
-                {/* <div className="box"> */}
                 <img
                   className=""
-                  alt=""
+                  alt="multi-colored flower icon"
                   src="https://sunpopbucket.s3.us-west-1.amazonaws.com/images/MultiColorFlowerStamp1.png"
                   style={{
                     maxHeight: 300,
                     maxWidth: 300,
-                    padding: 75
-                    // // paddingLeft: 50,
-                    // paddingRight: 90,
+                    padding: 75,
                   }}
                 />
-                {/* <div className="middle">
-                      <div className="text">click me</div>
-                    </div>
-                  </div>
-                </div> */}
+              </Grid>
+            </Grid>
+            <Grid container direction="row" justifyContent="center">
+              <Grid item xs={4}></Grid>
+              <Grid item xs={4}>
+                <img
+                  alt="my recent projects"
+                  src={myProjectText}
+                  style={{ maxHeight: 100, maxWidth: 300, padding: 75 }}
+                />
+              </Grid>
+              <Grid item xs={4}></Grid>
+            </Grid>
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              spacing={2}
+            >
+              <Grid item xs={3}>
+                <a
+                  title="Hazards and Hijinks"
+                  href="https://dev.d1wehpq1tr8ee4.amplifyapp.com/"
+                >
+                  <img
+                    src={img13}
+                    alt=""
+                    style={{
+                      height: "auto",
+                      width: "auto",
+                      maxHeight: 300,
+                      maxWidth: 400,
+                    }}
+                    className="shadow rounded"
+                  ></img>
+                </a>
+                {/* <tt style={{ fontSize: 30 }}>Hazards and Hijinks</tt> */}
+              </Grid>
+              <Grid item xs={3}>
+                <a title="sunpopshop.com" href="https://sunpopshop.com">
+                  <img
+                    src={img14}
+                    alt="sunpopshop.com"
+                    style={{
+                      height: "auto",
+                      width: "auto",
+                      maxHeight: 300,
+                      maxWidth: 300,
+                    }}
+                    className="shadow rounded"
+                  ></img>
+                </a>
+                {/* <tt style={{ fontSize: 30 }}>sunpopshop.com</tt> */}
+              </Grid>
+              <Grid item xs={3}>
+                <a
+                  title="Host a Fan"
+                  href="https://hostafan.azurewebsites.net/"
+                >
+                  <img
+                    src={img15}
+                    alt=""
+                    style={{
+                      height: "auto",
+                      width: "auto",
+                      maxHeight: 300,
+                      maxWidth: 300,
+                    }}
+                    className="shadow rounded"
+                  ></img>
+                </a>
+                {/* <tt style={{ fontSize: 30 }}>Host a Fan</tt> */}
               </Grid>
             </Grid>
           </Grid>
