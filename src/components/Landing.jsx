@@ -55,7 +55,7 @@ const Landing = () => {
           <Grid item>
             <img
               className="logo fullyRound shadow zoom hoverHand"
-              style={{ maxHeight: 400, maxWidth: 300 }}
+              style={{ maxHeight: 300, maxWidth: 200 }}
               src={
                 "https://sunpopbucket.s3.us-west-1.amazonaws.com/images/SelfieBuddiesA.png"
               }
@@ -76,8 +76,8 @@ const Landing = () => {
                 className="roundCorners  zoom"
                 src={helloText}
                 style={{
-                  height: "60%",
-                  width: "60%",
+                  height: "50%",
+                  width: "50%",
                 }}
               ></img>
               <Grid item></Grid>
@@ -105,7 +105,7 @@ const Landing = () => {
                   <img
                     src={bioIMG}
                     alt="becca is an artist and software engineer based out of the greater seattle area"
-                    style={{ height: 500, width: 600 }}
+                    style={{ height: 400, width: 500 }}
                   ></img>
                 </Link>
               </Grid>
@@ -114,7 +114,7 @@ const Landing = () => {
                   className="roundCorners"
                   alt=""
                   src={img3}
-                  style={{ maxHeight: 400, maxWidth: 400 }}
+                  style={{ maxHeight: 300, maxWidth: 300 }}
                 />
               </Grid>
               <Grid item xs={4} style={{ paddingLeft: 400 }}></Grid>
@@ -136,7 +136,7 @@ const Landing = () => {
                     src={
                       "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/checkOutResume.png"
                     }
-                    style={{ maxHeight: 200, maxWidth: 200 }}
+                    style={{ maxHeight: 150, maxWidth: 150 }}
                     onClick={handleClick}
                   />
                   <Modal1
@@ -168,8 +168,8 @@ const Landing = () => {
                   alt="multi-colored flower icon"
                   src="https://sunpopbucket.s3.us-west-1.amazonaws.com/images/MultiColorFlowerStamp1.png"
                   style={{
-                    maxHeight: 300,
-                    maxWidth: 300,
+                    maxHeight: 175,
+                    maxWidth: 175,
                     padding: 50,
                   }}
                 />
@@ -177,8 +177,8 @@ const Landing = () => {
               <Grid item>
                 <div className="shadow">
                   <SimpleImageSlider
-                    width={800}
-                    height={800}
+                    width={600}
+                    height={600}
                     images={carouselImgs}
                     showBullets={true}
                     showNavs={true}
