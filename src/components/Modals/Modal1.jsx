@@ -19,8 +19,8 @@ const Modal1 = ({ setIsModalOpen, open }) => {
               src={
                 resumeImg
               }
-              width="800px"
-              height="1100px"
+              width="600px"
+              height="900px"
             />
           </Modal>
           </Grid>
