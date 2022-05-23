@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/css/modal.css";
+import resumeImg from "../../assets/images/RebeccaGuertinResume22.png";
 import { Modal } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
@@ -16,7 +17,7 @@ const Modal1 = ({ setIsModalOpen, open }) => {
           <Modal open={open} onClose={handleClose}>
             <embed
               src={
-                "https://sunpopbucket.s3.us-west-1.amazonaws.com/images/GuertinRebeccaResumeNov2021.pdf"
+                resumeImg
               }
               width="800px"
               height="1100px"
