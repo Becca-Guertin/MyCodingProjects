@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/css/modal.css";
-import resumeImg from "../../assets/images/RebeccaGuertinResume22.png";
+import resumeImg from "../../assets/images/GuertinRebeccaResume2024.png";
 import { Modal } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
