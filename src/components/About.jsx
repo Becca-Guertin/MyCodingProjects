@@ -11,6 +11,9 @@ import "../assets/css/style.css";
 const About = () => {
   const [isModalOpen8, setIsModalOpen2] = useState(false);
 
+  const cloud =
+    "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/Modern-Pulp-cloudBG.PNG";
+
   const handleClick2 = () => {
     setIsModalOpen2(true);
     // alert("Press Esc to return to About");
@@ -21,7 +24,7 @@ const About = () => {
         className="container flex-extend"
         style={{
           padding: 100,
-          backgroundImage: "url(" + pageBackGround + ")",
+          backgroundImage: "url(" + cloud + ")",
         }}
       >
         <Grid
