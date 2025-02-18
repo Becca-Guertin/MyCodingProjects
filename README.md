@@ -4,6 +4,8 @@
 
 This site is my streamlined portfolio website that shares my skills, contact information, resume, work experience and technologies recently used - highlighting projects that demo this experience. 
 
+- link to deployed site: [https://beccaguertin.com]( https://beccaguertin.com )
+
 ### Screenshot of Homepage
 
 ![Homepage Screenshot](./src/assets/images/www.beccaguertin.com_.png)
