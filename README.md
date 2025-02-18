@@ -8,4 +8,15 @@ This site is my streamlined portfolio website that shares my skills, contact inf
 
 ![Homepage Screenshot](./src/assets/images/www.beccaguertin.com_.png)
 
-### TODO : Fill out explaination of technologies used in this project - including React.js, AWS S3 and AWS Amplify, and Material-UI
+### ReadME.md - TODO's
+- Fill out explaination of technologies used in this project - including:
+    - React.js, 
+    - AWS S3 and AWS Amplify 
+    - Material-UI
+
+### Project - TODO's 
+- Include recent projects section linked from homepage 
+    - Demo artist website
+    - Demo movie rating website
+    - Demo website highlighting art from local D&D improv group
+    - etc.
