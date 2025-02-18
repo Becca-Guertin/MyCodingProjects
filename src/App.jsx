@@ -3,7 +3,8 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Landing from "./components/Landing";
 import About from "./components/About";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
+import Test from "./components/Landing";
 
 //import logo from "./logo.svg";
 
@@ -25,17 +26,15 @@ class App extends Component {
               <Routes>
                 <Route
                   path="/"
-                  //exact={true}
                   element={<Landing />}
                 ></Route>
                 <Route
                   path="/About"
-                  //exact={true}
                   element={<About />}
                 ></Route>
               </Routes>
             </div>
-            {/* <Footer /> */}
+            <Footer />
           </main>
         </React.Fragment>
       </BrowserRouter>

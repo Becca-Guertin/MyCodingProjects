@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Grid } from "@mui/material";
+import { Grid, Container, Box } from "@mui/material";
 import SimpleImageSlider from "react-simple-image-slider";
 import helloText from "../assets/images/HelloWorldIMG.png";
 import greenBG from "../assets/images/GreenBannerIMG.png";
@@ -18,159 +18,165 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../assets/css/style.css";
 
 const Landing = () => {
-  const carouselImgs = [img2, img12, img5, img6, img8, img9];
+  const carouselImgs = [
+    { url: img2 },
+    { url: img12 },
+    { url: img5 },
+    { url: img6 },
+    { url: img8 },
+    { url: img9 },
+  ];
+  // const carouselImgs = [img3,img16, img9];
+
+  console.log("Carousel Images: ", carouselImgs);
 
   return (
     <React.Fragment>
-      <div className="container">
+      <Box
+        sx={{
+          backgroundImage: `url(${greenBG})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          width: "100%", // Ensures it stretches full width
+          minHeight: "30vh", // Limits how big it gets
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          padding: "2rem 0", // Adds padding to prevent overcrowding
+        }}
+      >
+        {/* Selfie Buddies Image - Keeps it centered and at a good size */}
+        <img
+          className="logo fullyRound shadow zoom hoverHand"
+          src={
+            "https://sunpopbucket.s3.us-west-1.amazonaws.com/images/SelfieBuddiesA.png"
+          }
+          alt="@sunflowerpopshop"
+        />
+
+        {/* Hello World Image - Centers dynamically */}
         <Grid
           container
-          direction="column"
-          spacing={4}
-          justify="center"
+          justifyContent="center"
           alignItems="center"
-          style={{
-            backgroundImage: "url(" + greenBG + ")",
-            backgroundSize: "100%",
-            backgroundRepeat: "no-repeat",
+          sx={{
+            display: "flex",
+            minHeight: "20vh", // Keeps it balanced under the header
           }}
         >
-          <Grid item xs={2}></Grid>
+          <img
+            alt="hello world"
+            className="zoom"
+            src={helloText}
+            style={{
+              maxWidth: "65%", // Ensures responsiveness
+              maxHeight: "50vh", // Prevents it from being too large
+              objectFit: "contain",
+            }}
+          />
+        </Grid>
+      </Box>
+
+      <Container>
+        <Grid
+          container
+          direction="row"
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Grid item>
-            <img
-              className="logo fullyRound shadow zoom hoverHand"
-              style={{ maxHeight: 300, maxWidth: 200 }}
-              src={
-                "https://sunpopbucket.s3.us-west-1.amazonaws.com/images/SelfieBuddiesA.png"
-              }
-              alt="@sunflowerpopshop"
-            />
+            <Link to="" title="">
+              <img
+                className="bio-img"
+                src={bioIMG}
+                alt="becca is an artist and software engineer based out of the greater seattle area"
+                // style={{ height: 400, width: 500 }}
+              ></img>
+            </Link>
           </Grid>
           <Grid item>
-            <Grid
-              container
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Grid item></Grid>
-              <Grid item></Grid>
-              <img
-                alt="hello world"
-                className="roundCorners  zoom"
-                src={helloText}
-                style={{
-                  height: "50%",
-                  width: "50%",
-                }}
-              ></img>
-              <Grid item></Grid>
+            <img
+              className="roundCorners img"
+              alt=""
+              src={img3}
+              // style={{ maxHeight: 300, maxWidth: 300 }}
+            />
+          </Grid>
+          <Grid item xs={4} style={{ paddingLeft: 400 }}></Grid>
+        </Grid>
+      </Container>
+
+      <Container>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item></Grid>
+          <Grid item>
+            <Grid item>
+              <Link to="/about">
+                <div className="box">
+                  <img
+                    className="zoom learn-more"
+                    src={img16}
+                    alt="learn more"
+                    style={{
+                      marginLeft: 20,
+                      marginBottom: 20,
+                    }}
+                  ></img>
+                  <div className="middle"></div>
+                </div>
+              </Link>
             </Grid>
           </Grid>
           <Grid item></Grid>
         </Grid>
-        <Grid
-          container
-          direction="column"
-          spacing={4}
-          justify="center"
-          alignItems="center"
-        >
-          <Grid item>
-            <Grid
-              container
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <Link to="" title="">
-                  <img
-                    src={bioIMG}
-                    alt="becca is an artist and software engineer based out of the greater seattle area"
-                    style={{ height: 400, width: 500 }}
-                  ></img>
-                </Link>
-              </Grid>
-              <Grid item>
-                <img
-                  className="roundCorners"
-                  alt=""
-                  src={img3}
-                  style={{ maxHeight: 300, maxWidth: 300 }}
-                />
-              </Grid>
-              <Grid item xs={4} style={{ paddingLeft: 400 }}></Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Grid item></Grid>
-                <Grid item>
-                  <Grid item className="justify-content-center">
-          
-                  <Link to="/about">
-                    <div className="box">
-                      <img
-                        className="image"
-                        src={
-                          img16
-                        }
-                        alt="learn more"
-                        style={{
-                          marginLeft: 20,
-                          marginBottom: 20,
-                          height: "auto",
-                          width: "auto",
-                          maxHeight: 370,
-                          maxWidth: 370,
-                        }}
-                      ></img>
-                      <div className="middle"></div>
-                    </div>
-                  </Link>
-                  </Grid>
-              </Grid>
-              <Grid item></Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-              spacing={4}
-              style={{
-                paddingTop: 100,
-                paddingBottom: 75,
-                backgroundImage: "url(" + purpleBGimg + ")",
-                backgroundSize: "100%",
-              }}
-            >
-              <Grid item> </Grid>
-              <Grid item>
-                <div className="shadow">
-                  <SimpleImageSlider
-                    width={600}
-                    height={600}
-                    images={carouselImgs}
-                    showBullets={true}
-                    showNavs={true}
-                  />
-                </div>
-              </Grid>
-              <Grid item></Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </div>
+      </Container>
+
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        spacing={4}
+        style={{
+          paddingTop: 100,
+          paddingBottom: 75,
+          backgroundImage: "url(" + purpleBGimg + ")",
+          backgroundSize: "100%",
+        }}
+      >
+        <Grid item></Grid>
+        {/* Carousel Section */}
+        {/* <Grid
+          item
+          xs={12}
+          sm={8}
+          md={6}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "0 auto",
+            width: "100%",
+          }}
+        > */}
+        {/* <Box className="carousel-wrapper"> */}
+        {/* <SimpleImageSlider
+            width="100%" // This makes the slider take up 100% of the width of the wrapper div
+            height="auto" // Adjust the height accordingly, or set a max height
+            images={carouselImgs}
+            showBullets={true}
+            showNavs={true}
+          /> */}
+        {/* </Box> */}
+        {/* </Grid> */}
+        <Grid item></Grid>
+      </Grid>
     </React.Fragment>
   );
 };

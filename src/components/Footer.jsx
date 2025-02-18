@@ -1,10 +1,12 @@
 import React from "react";
-import { Grid, IconButton, Paper } from "@mui/material";
-import { Tooltip } from "@mui/material";
-import github from "../assets/images/icons/github.png";
-import instagram from "../assets/images/icons/instagram.png";
-import linkedin from "../assets/images/icons/linkedin.png";
-import sunpopFlower from "../assets/images/siteFlowerIcon.png";
+import { Grid, Paper, Box, Container } from "@mui/material";
+// import { Tooltip, IconButton } from "@mui/material";
+// import github from "../assets/images/icons/github.png";
+// import instagram from "../assets/images/icons/instagram.png";
+// import linkedin from "../assets/images/icons/linkedin.png";
+// import sunpopFlower from "../assets/images/siteFlowerIcon.png";
+import bg from "../assets/images/WebsiteBG.png";
+import img from "../assets/images/TyCrop-footer.jpg";
 import clsx from "clsx";
 
 const Footer = (props) => {
@@ -19,87 +21,38 @@ const Footer = (props) => {
           "app-footer--fixed": footerFixed,
           "app-footer--fixed__collapsed": sidebarToggle,
         })}
+        sx={{
+          backgroundImage: `url(${bg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "auto",
+          width: "100%",
+          paddingTop: 10,
+          paddingBottom: 10,
+        }}
       >
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-          style={{ padding: 20 }}
-        >
-          <Grid item xs={6}></Grid>
-          <Grid item xs={6}>
-            <div className="row" style={{ marginBottom: 25 }}>
-              <Tooltip arrow title="Github">
-                <IconButton
-                  className="nav-link text-white text-bold"
-                  href="https://github.com/Becca-Guertin"
-                  rel="noopener nofollow"
-                  target="_blank"
-                >
-                  <span className="btn-wrapper--icon">
-                    <img
-                    alt=""
-                      style={{
-                        height: 40,
-                        width: 40,
-                      }}
-                      src={github}
-                    />
-                  </span>
-                </IconButton>
-              </Tooltip>
-              <IconButton href="" title="SunPopShop">
+        {/* <Box
+         
+        > */}
+          <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            style={{ padding: 20 }}
+          >
+            <Grid item>
+              <Box>
                 <img
-                alt=""
-                  className="rounded"
-                  src={sunpopFlower}
-                  style={{ maxHeight: 35, maxWidth: 35 }}
+                  className="image" //roundCorners
+                  src={img}
+                  style={{ maxHeight: 300, maxWidth: 300 }}
+                  alt="contact information listed"
                 ></img>
-              </IconButton>
-              <Tooltip arrow title="LinkedIn">
-                <IconButton
-                  className="nav-link text-white text-bold"
-                  href="https://www.linkedin.com/in/rebecca-guertin/"
-                  rel="noopener nofollow"
-                  target="_blank"
-                >
-                  <span className="btn-wrapper--icon">
-                    <img
-                    alt=""
-                      style={{
-                        height: 40,
-                        width: 40,
-                      }}
-                      src={linkedin}
-                    />
-                  </span>
-                </IconButton>
-              </Tooltip>
-
-              <Tooltip arrow title="Instagram">
-                <IconButton
-                  className="nav-link text-white text-bold"
-                  href="https://www.instagram.com/sunflowerpopshop/"
-                  rel="noopener nofollow"
-                  target="_blank"
-                >
-                  <span className="btn-wrapper--icon">
-                    <img
-                    alt=""
-                      style={{
-                        height: 50,
-                        width: 50,
-                      }}
-                      src={instagram}
-                    />
-                  </span>
-                </IconButton>
-              </Tooltip>
-            </div>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item xs={6}></Grid>
-        </Grid>
+        {/* </Box> */}
       </Paper>
     </React.Fragment>
   );
