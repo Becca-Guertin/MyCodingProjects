@@ -4,11 +4,7 @@ import NavBar from "./components/NavBar";
 import Landing from "./components/Landing";
 import About from "./components/About";
 import Footer from "./components/Footer";
-import Test from "./components/Landing";
 
-//import logo from "./logo.svg";
-
-//import "./App.css";
 class App extends Component {
   componentDidUpdate(prevProps) {
     let currentPath = this.props.location.pathname;

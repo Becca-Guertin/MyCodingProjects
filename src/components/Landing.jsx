@@ -1,34 +1,75 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Grid, Container, Box } from "@mui/material";
-import SimpleImageSlider from "react-simple-image-slider";
+import {
+  Grid,
+  Container,
+  Box,
+  Card,
+  CardContent,
+  Button,
+  Typography,
+  CardMedia,
+} from "@mui/material";
+
 import helloText from "../assets/images/HelloWorldIMG.png";
 import greenBG from "../assets/images/GreenBannerIMG.png";
 import bioIMG from "../assets/images/BeccaBioIMG.png";
-import img2 from "../assets/images/ClownBabeTexture-min.png";
+import recentProjectsIMG from "../assets/images/RecentProjectsIMJ (1).png";
+
 import img3 from "../assets/images/PlantAlienBabeTex_colors.png";
-import img5 from "../assets/images/EverythingMeansNothing.PNG";
-import img6 from "../assets/images/Modern-Pulp-celebrateNewChallenges.PNG";
-import img8 from "../assets/images/DE0A4174-6922-4D78-97C8-D40DB7961115.JPG";
-import img9 from "../assets/images/SurprisedAlienBabe_redTex.png";
-import img12 from "../assets/images/Modern-Pulp-myHeartRevamp.PNG";
+
 import purpleBGimg from "../assets/images/SiteBackGroundHorizontal.PNG";
 import img16 from "../assets/images/LearnMore-landingButton.png";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import hhimg from "../assets/images/GithubSitePreview.png";
+import sunpopimg from "../assets/images/dev268.dhwzft2qluj0d.amplifyapp.com_.png";
+import movieimg from "../assets/images/logit-website-github-img.png";
+
+import github from "../assets/images/icons/github.png";
+
 import "../assets/css/style.css";
 
 const Landing = () => {
-  const carouselImgs = [
-    { url: img2 },
-    { url: img12 },
-    { url: img5 },
-    { url: img6 },
-    { url: img8 },
-    { url: img9 },
+  const projects = [
+    {
+      name: "Movie DB Demo Site",
+      img: movieimg,
+      liveLink: "https://production.d3sbakngzf8hmw.amplifyapp.com/",
+      githubRep: "https://github.com/Becca-Guertin/movieRater",
+      description:
+        "Demo full-stack wepp app, utilizing a Kaggle dataset, stored in a SQL database, with a Node.js backend server. React.js, Vite and Chakra-UI for the frontend.",
+      skills:
+        "JavaScript, React.js, JSX, Vite, Chakra-UI, Kaggle, SQL, SSMS, NPM, Node.js, Express.js, HTML, CSS",
+    },
+    {
+      name: "Hazards and Hijinks, Demo Site",
+      img: hhimg,
+      liveLink: "https://dev.d1wehpq1tr8ee4.amplifyapp.com/",
+      githubRep: "https://github.com/Becca-Guertin/hazardsAndHijinks",
+      description:
+        "Portfolio website to showcase artwork created for D&D improv group: Hazards and Hijinks.",
+      skills:
+        "AWS Amplify, AWS S3, JavaScript, React.js, JSX, Material-UI, HTML, CSS, NPM/Yarn",
+    },
+    {
+      name: "Artist Demo Portfolio",
+      img: sunpopimg,
+      liveLink: "https://dev268.dhwzft2qluj0d.amplifyapp.com/",
+      githubRep: "https://github.com/Becca-Guertin/SunPopShop-",
+      description:
+        "Artist demo portfolio, with examples of displaying artwork, contact information, socials. This is a React.js front-end app with a static server, deployed with AWS Amplify.",
+      skills:
+        "AWS Amplify, AWS S3, JavaScript, React.js, JSX, Material-UI, NPM/Yarn, CSS, HTML",
+    },
+    {
+      name: "Handlebars TODO Demo site",
+      img: "https://devswag.com/cdn/shop/products/handlebars-shirt-front_1024x1024.png?v=1571438516",
+      liveLink: "",
+      githubRep: "https://github.com/Becca-Guertin/handlebarsToDos",
+      description:
+        "This repository is an example of how to use handlebars in Node.js with Express,js and Sequelize, connecting to MySQL database.",
+      skills: "JavaScript, handlebars, Node.js, Express.js, Sequelize, MYSQL",
+    },
   ];
-  // const carouselImgs = [img3,img16, img9];
-
-  console.log("Carousel Images: ", carouselImgs);
 
   return (
     <React.Fragment>
@@ -52,7 +93,7 @@ const Landing = () => {
           src={
             "https://sunpopbucket.s3.us-west-1.amazonaws.com/images/SelfieBuddiesA.png"
           }
-          alt="@sunflowerpopshop"
+          alt="@sunflowerpopshop self-portrait, black and white"
         />
 
         {/* Hello World Image - Centers dynamically */}
@@ -77,7 +118,6 @@ const Landing = () => {
           />
         </Grid>
       </Box>
-
       <Container>
         <Grid
           container
@@ -87,21 +127,17 @@ const Landing = () => {
           alignItems="center"
         >
           <Grid item>
-            <Link to="" title="">
-              <img
-                className="bio-img"
-                src={bioIMG}
-                alt="becca is an artist and software engineer based out of the greater seattle area"
-                // style={{ height: 400, width: 500 }}
-              ></img>
-            </Link>
+            <img
+              className="bio-img"
+              src={bioIMG}
+              alt="becca is an artist and software engineer based out of the greater seattle area"
+            />
           </Grid>
           <Grid item>
             <img
               className="roundCorners img"
-              alt=""
+              alt="@sunflowerpopshop arwork, Alien woman with galactic background"
               src={img3}
-              // style={{ maxHeight: 300, maxWidth: 300 }}
             />
           </Grid>
           <Grid item xs={4} style={{ paddingLeft: 400 }}></Grid>
@@ -137,45 +173,82 @@ const Landing = () => {
           <Grid item></Grid>
         </Grid>
       </Container>
-
       <Grid
         container
-        direction="row"
+        direction="column"
         justifyContent="center"
         alignItems="center"
         spacing={4}
         style={{
-          paddingTop: 100,
-          paddingBottom: 75,
+          paddingTop: 10,
           backgroundImage: "url(" + purpleBGimg + ")",
           backgroundSize: "100%",
         }}
       >
-        <Grid item></Grid>
-        {/* Carousel Section */}
-        {/* <Grid
-          item
-          xs={12}
-          sm={8}
-          md={6}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            margin: "0 auto",
-            width: "100%",
-          }}
-        > */}
-        {/* <Box className="carousel-wrapper"> */}
-        {/* <SimpleImageSlider
-            width="100%" // This makes the slider take up 100% of the width of the wrapper div
-            height="auto" // Adjust the height accordingly, or set a max height
-            images={carouselImgs}
-            showBullets={true}
-            showNavs={true}
-          /> */}
-        {/* </Box> */}
-        {/* </Grid> */}
-        <Grid item></Grid>
+        <Grid item>
+          <img
+            className="recentProj"
+            src={recentProjectsIMG}
+            alt="My Recent Projects"
+          />
+        </Grid>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={2}
+        >
+          {projects.map((project, index) => (
+            <Grid item key={index}>
+              <Card
+                style={{ maxWidth: "300px", height: "auto", marginBottom: 50 }}
+                sx={{ p: 2, textAlign: "center" }}
+              >
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  {project.name}
+                </Typography>
+                <CardMedia
+                  component="img"
+                  height="194"
+                  image={project.img}
+                  alt="demo project landing page"
+                />
+                <CardContent>
+                  <p>{project.description}</p>
+                  <p>
+                    <span style={{ fontWeight: "bold" }}>
+                      Skills and Technologies Utilized:{" "}
+                    </span>
+                    {project.skills}
+                  </p>
+                </CardContent>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href={project.liveLink}
+                  target="_blank"
+                  sx={{ mt: 1 }}
+                >
+                  Live Site
+                </Button>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  href={project.githubRep}
+                  target="_blank"
+                  sx={{ mt: 1, ml: 1 }}
+                >
+                  <img
+                    src={github}
+                    alt="github icon"
+                    style={{ maxHeight: "25px", width: "auto" }}
+                  />
+                </Button>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </React.Fragment>
   );

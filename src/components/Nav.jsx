@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/siteFlowerIcon.png";
 import github from "../assets/images/icons/github.png";
-import instagram from "../assets/images/icons/instagram.png";
+import Modal8 from "../components/Modals/Modal8";
 import linkedin from "../assets/images/icons/linkedin.png";
 import { IconButton, Tooltip, Grid } from "@material-ui/core";
-import sunpop from "../assets/images/Sunpoplogostamp.png";
+
 import { Link } from "react-router-dom";
 import "../assets/css/style.css";
 
 const Nav = () => {
+  const [isModalOpen8, setIsModalOpen2] = useState(false);
+  const handleClick2 = () => {
+    setIsModalOpen2(true);
+  };
   return (
     <React.Fragment>
       <Grid
@@ -27,7 +31,6 @@ const Nav = () => {
                 className="image icon"
                 alt="Beccaguertin.com home button"
                 src={logo}
-                // style={{  marginBottom: 30 }}
               />
             </i>
           </Link>
@@ -47,18 +50,6 @@ const Nav = () => {
           </Tooltip>
         </Grid>
         <Grid>
-          <IconButton
-            href="https://www.sunpopshop.com"
-            title="SunPopShop Artist Website"
-          >
-            <img
-              alt="SunPopShop Artist Website"
-              className="rounded icon"
-              src={sunpop}
-            ></img>
-          </IconButton>
-        </Grid>
-        <Grid>
           <Tooltip arrow title="LinkedIn">
             <IconButton
               className="nav-link text-white text-bold"
@@ -73,18 +64,20 @@ const Nav = () => {
           </Tooltip>
         </Grid>
         <Grid>
-          <Tooltip arrow title="Instagram">
-            <IconButton
-              className="nav-link text-white text-bold"
-              href="https://www.instagram.com/sunflowerpopshop/"
-              rel="noopener nofollow"
-              target="_blank"
-            >
-              <span className="btn-wrapper--icon">
-                <img className="icon" alt="" src={instagram} />
-              </span>
-            </IconButton>
-          </Tooltip>
+          <IconButton>
+            <Modal8
+              open={isModalOpen8}
+              setIsModalOpen={setIsModalOpen2}
+            ></Modal8>
+            <img
+              className="icon"
+              src={
+                "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/checkOutResume.png"
+              }
+              onClick={handleClick2}
+              alt=""
+            ></img>
+          </IconButton>
         </Grid>
       </Grid>
     </React.Fragment>
