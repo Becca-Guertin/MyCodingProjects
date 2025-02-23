@@ -1,18 +1,13 @@
 import React from "react";
-import { Grid, Paper, Box, Container } from "@mui/material";
-// import { Tooltip, IconButton } from "@mui/material";
-// import github from "../assets/images/icons/github.png";
-// import instagram from "../assets/images/icons/instagram.png";
-// import linkedin from "../assets/images/icons/linkedin.png";
-// import sunpopFlower from "../assets/images/siteFlowerIcon.png";
+import { Paper, Box } from "@mui/material";
 import bg from "../assets/images/WebsiteBG.png";
 import img from "../assets/images/TyCrop-footer.jpg";
 import clsx from "clsx";
+import Grid from '@mui/material/Grid2'
 
 const Footer = (props) => {
   const { footerShadow, sidebarToggle, footerFixed } = props;
-  const etsy =
-    "http://vectorlogofree.com/wp-content/uploads/2014/02/49313-etsy-logo-icon-vector-icon-vector-eps.png";
+  
   return (
     <React.Fragment>
       <Paper
@@ -31,9 +26,6 @@ const Footer = (props) => {
           paddingBottom: 10,
         }}
       >
-        {/* <Box
-         
-        > */}
           <Grid
             container
             direction="row"
@@ -52,7 +44,6 @@ const Footer = (props) => {
               </Box>
             </Grid>
           </Grid>
-        {/* </Box> */}
       </Paper>
     </React.Fragment>
   );

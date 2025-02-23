@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Box } from "@material-ui/core";
+import { Box } from "@mui/material";
+import Grid from '@mui/material/Grid2'
 import img1 from "../assets/images/Contact-aboutMe.png";
 import img3 from "../assets/images/About me-cosmoQuiz.png";
 import img4 from "../assets/images/Hi, how are you-img-about.png";

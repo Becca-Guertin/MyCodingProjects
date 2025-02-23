@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import pdfUrl from "../assets/images/RebeccaGuertinResume - 2025.pdf";
 import logo from "../assets/images/siteFlowerIcon.png";
 import github from "../assets/images/icons/github.png";
-import Modal8 from "../components/Modals/Modal8";
 import linkedin from "../assets/images/icons/linkedin.png";
-import { IconButton, Tooltip, Grid } from "@material-ui/core";
+import { IconButton, Tooltip, Box } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 
 import { Link } from "react-router-dom";
 import "../assets/css/style.css";
 
 const Nav = () => {
-  const [isModalOpen8, setIsModalOpen2] = useState(false);
-  const handleClick2 = () => {
-    setIsModalOpen2(true);
-  };
+
   return (
     <React.Fragment>
       <Grid
@@ -22,6 +20,8 @@ const Nav = () => {
         spacing={4}
         className="navBar"
         style={{ backgroundColor: "white" }}
+        paddingBottom={3}
+        paddingTop={3}
       >
         <Grid item></Grid>
         <Grid item>
@@ -49,7 +49,7 @@ const Nav = () => {
             </IconButton>
           </Tooltip>
         </Grid>
-        <Grid>
+        <Grid item>
           <Tooltip arrow title="LinkedIn">
             <IconButton
               className="nav-link text-white text-bold"
@@ -63,20 +63,22 @@ const Nav = () => {
             </IconButton>
           </Tooltip>
         </Grid>
-        <Grid>
-          <IconButton>
-            <Modal8
-              open={isModalOpen8}
-              setIsModalOpen={setIsModalOpen2}
-            ></Modal8>
-            <img
-              className="icon"
-              src={
-                "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/checkOutResume.png"
-              }
-              onClick={handleClick2}
-              alt=""
-            ></img>
+        <Grid item>
+          <IconButton
+            className="nav-link text-white text-bold"
+            rel="noopener nofollow"
+            target="_blank"
+            href={pdfUrl}
+          >
+            <Box>
+              <img
+                className="icon"
+                src={
+                  "https://sunpopbucket.s3-us-west-1.amazonaws.com/images/checkOutResume.png"
+                }
+                alt=""
+              />
+            </Box>
           </IconButton>
         </Grid>
       </Grid>

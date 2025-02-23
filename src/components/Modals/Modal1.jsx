@@ -1,11 +1,13 @@
 import React from "react";
 import "../../assets/css/modal.css";
 import resumeImg from "../../assets/images/GuertinRebeccaResume2024.png";
-import { Modal } from "@material-ui/core";
-import { Grid } from "@material-ui/core";
+import { Modal } from "@mui/material";
+import Grid from '@mui/material/Grid2'
 import PropTypes from "prop-types";
 
 const Modal1 = ({ setIsModalOpen, open }) => {
+
+  
   const handleClose = () => {
     setIsModalOpen(false);
   };

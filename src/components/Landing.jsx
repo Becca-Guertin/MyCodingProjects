@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  Grid,
   Container,
   Box,
   Card,
@@ -10,7 +9,7 @@ import {
   Typography,
   CardMedia,
 } from "@mui/material";
-
+import Grid from '@mui/material/Grid2'
 import helloText from "../assets/images/HelloWorldIMG.png";
 import greenBG from "../assets/images/GreenBannerIMG.png";
 import bioIMG from "../assets/images/BeccaBioIMG.png";
