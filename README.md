@@ -12,7 +12,7 @@ _This is a front end website, with a static server, deployed with AWS Amplify, u
 
 ### Technologies Used
 - React
-- Create-React-App _create-react-app is now deprecated - use something like Vite when creating a new React appliction:_ [https://vite.dev/guide/]
+- Create-React-App _create-react-app is now deprecated - use something like Vite when creating a new React appliction:_ [https://vite.dev/guide/)](https://vite.dev/guide/)
 - JavaScript
 - JSX
 - Material-UI

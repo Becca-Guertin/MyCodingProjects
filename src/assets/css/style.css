@@ -1,13 +1,13 @@
 .about-img1 {
-height: 200px;
+max-height: 200px;
 width: auto;
 }
 .about-img2 {
-  height: 300px;
+ max-height: 300px;
   width: auto;
 }
 .about-img3{
-  height: 200px;
+  max-height: 200px;
   width: auto;
 }
 .about-img4{
@@ -141,9 +141,21 @@ width: auto;
   }
 }
 
-@media (max-width: 761px){
+@media (max-width: 956px){
   .about-img1 {
     max-height: 250px;
+    width: auto;
+  }
+}
+@media (max-width: 761px){
+  .about-img1 {
+    max-height: 200px;
+    width: auto;
+  }
+}
+@media (max-width: 500px){
+  .about-img1 {
+    max-height: 175px;
     width: auto;
   }
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Grid from '@mui/material/Grid2'
-import img1 from "../assets/images/Contact-aboutMe.png";
-import img3 from "../assets/images/About me-cosmoQuiz.png";
-import img4 from "../assets/images/Hi, how are you-img-about.png";
-import img5 from "../assets/images/Let’s stay in touch-about.png";
+import Grid from '@mui/material/Grid2';
+import img1 from "../assets/images/ContactCardIMG.png";
+import img2 from "../assets/images/About me-cosmoQuiz.png";
+import img3 from "../assets/images/Hi, how are you-img-about.png";
+import img4 from "../assets/images/Let’s stay in touch-about.png";
 import "../assets/css/style.css";
 
 const About = () => {
@@ -38,7 +38,7 @@ const About = () => {
             <Box>
               <img
                 className="image zoom about-img4"
-                src={img3}
+                src={img2}
                 alt="About me quiz"
               ></img>
             </Box>
@@ -54,8 +54,8 @@ const About = () => {
           <Grid item>
             <Box>
               <img
-                className="zoom about-img1"
-                src={img4}
+                className="about-img2"
+                src={img3}
                 alt="Hi, How are you?"
               />
             </Box>
@@ -63,7 +63,7 @@ const About = () => {
           <Grid item>
             <Box>
               <img
-                className="zoom about-img2"
+                className="zoom about-img1"
                 src={img1}
                 alt="contact information listed"
               ></img>
@@ -73,8 +73,8 @@ const About = () => {
           <Grid item>
             <Box>
               <img
-                className="zoom about-img3"
-                src={img5}
+                className="about-img3"
+                src={img4}
                 alt="Let's keep in touch!"
               ></img>
             </Box>
